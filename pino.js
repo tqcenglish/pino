@@ -15,6 +15,7 @@ const {
 } = require('./lib/tools')
 const { version, LOG_VERSION } = require('./lib/meta')
 const {
+  showFileInfoSym,
   chindingsSym,
   redactFmtSym,
   serializersSym,
@@ -35,6 +36,7 @@ const { pid } = process
 const hostname = os.hostname()
 const defaultErrorSerializer = stdSerializers.err
 const defaultOptions = {
+  showFileInfo: false,
   level: 'info',
   useLevelLabels: false,
   messageKey: 'msg',
@@ -59,6 +61,7 @@ const serializers = Object.assign(Object.create(null), stdSerializers)
 function pino (...args) {
   const { opts, stream } = normalize(...args)
   const {
+    showFileInfo,
     redact,
     crlf,
     serializers,
@@ -97,6 +100,7 @@ function pino (...args) {
 
   const instance = {
     levels,
+    [showFileInfoSym]: showFileInfo,
     [useLevelLabelsSym]: useLevelLabels,
     [changeLevelNameSym]: changeLevelName,
     [useOnlyCustomLevelsSym]: useOnlyCustomLevels,

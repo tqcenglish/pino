@@ -4,6 +4,14 @@
 
 [Very low overhead](#low-overhead) Node.js logger, inspired by Bunyan.
 
+## pino 添加输出日志的文件名/行号信息
+
+``` bash
+npm install pino-stack-info
+```
+
+添加配置选项 **showFileInfo**
+
 ## Documentation
 
 * [Benchmarks ⇗](/docs/benchmarks.md)

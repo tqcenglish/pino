@@ -1,7 +1,7 @@
 {
-  "name": "pino",
+  "name": "pino-stack-info",
   "version": "5.11.1",
-  "description": "super fast, all natural json logger",
+  "description": "super fast, all natural json logger, pino 添加输出日志的文件名/行号信息",
   "main": "pino.js",
   "browser": "./browser.js",
   "files": [
